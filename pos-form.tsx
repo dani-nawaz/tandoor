@@ -275,7 +275,7 @@ export default function POSForm() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <Label className="text-sm text-gray-500">Quantity</Label>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-1">
                           <Button
                             variant="outline"
                             size="icon"
@@ -291,7 +291,7 @@ export default function POSForm() {
                             min="0"
                             value={item.quantity}
                             onChange={(e) => handleItemChange(index, "quantity", Number.parseInt(e.target.value) || 0)}
-                            className="text-center w-12"
+                            className="text-center w-16"
                             onClick={(e) => {
                               e.stopPropagation()
                               e.currentTarget.select()
@@ -309,9 +309,9 @@ export default function POSForm() {
                           </Button>
                         </div>
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-1">
                         <Label className="text-sm text-gray-500">Price (Rs.)</Label>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-1">
                           <Button
                             variant="outline"
                             size="icon"
@@ -328,7 +328,7 @@ export default function POSForm() {
                             step="5"
                             value={item.price}
                             onChange={(e) => handleItemChange(index, "price", Number.parseFloat(e.target.value) || 0)}
-                            className="text-center w-12"
+                            className="text-center w-16"
                             onClick={(e) => {
                               e.stopPropagation()
                               e.currentTarget.select()
