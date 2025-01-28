@@ -26,15 +26,12 @@ interface Item {
 export default function POSForm() {
     const [items, setItems] = useState<Item[]>([
         {
-            name: "Paratha",
-            quantity: 0,
-            selected: false,
-            price: 20,
-            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nmvkOg0rBM7ESBIa9Jm074nEk9cmDX.png"
+            name: "Sada Roti", quantity: 0, selected: false, price: 20,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-45WwEazqnFU9l6Z8dB4ksUDWqZefVq.png"
         },
         {
-            name: "Channy", quantity: 0, selected: false, price: 100,
-            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0knmn69ClwqZiBzwRbc4eWNsf5wDlN.png"
+            name: "Kamheri Roti", quantity: 0, selected: false, price: 30,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-89N6gSQE3BSKP3ED7sg3jXdorFOjkq.png"
         },
         {
             name: "Kulcha",
@@ -48,12 +45,23 @@ export default function POSForm() {
             src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hzMUfQNP09HiDMZMq9joO6FN1Ykvyc.png"
         },
         {
-            name: "Kamheri Roti", quantity: 0, selected: false, price: 30,
-            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-89N6gSQE3BSKP3ED7sg3jXdorFOjkq.png"
+            name: "Roghni Nan", quantity: 0, selected: false, price: 80,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hzMUfQNP09HiDMZMq9joO6FN1Ykvyc.png"
         },
         {
-            name: "Sada Roti", quantity: 0, selected: false, price: 20,
-            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-45WwEazqnFU9l6Z8dB4ksUDWqZefVq.png"
+            name: "Alo wala Nan", quantity: 0, selected: false, price: 80,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hzMUfQNP09HiDMZMq9joO6FN1Ykvyc.png"
+        },
+        {
+            name: "Channy", quantity: 0, selected: false, price: 100,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0knmn69ClwqZiBzwRbc4eWNsf5wDlN.png"
+        },
+        {
+            name: "Paratha",
+            quantity: 0,
+            selected: false,
+            price: 20,
+            src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nmvkOg0rBM7ESBIa9Jm074nEk9cmDX.png"
         },
     ])
     const [paymentMethod, setPaymentMethod] = useState<string>("")
@@ -236,18 +244,18 @@ export default function POSForm() {
                                                 min="0"
                                                 value={item.quantity}
                                                 onChange={(e) => handleItemChange(index, "quantity", Number.parseInt(e.target.value) || 0)}
-                                                className="w-20 text-center"
+                                                className="text-center px-0 w-12"
                                                 onClick={(e) => e.stopPropagation()}
                                             />
                                             <div className="flex items-center">
-                                                <Label className="mr-2">$</Label>
+                                                <Label className="mr-1">Rs.</Label>
                                                 <Input
                                                     type="number"
                                                     min="0"
                                                     step="0.01"
                                                     value={item.price}
                                                     onChange={(e) => handleItemChange(index, "price", Number.parseFloat(e.target.value) || 0)}
-                                                    className="w-20 text-center"
+                                                    className="text-center px-0 w-12"
                                                     onClick={(e) => e.stopPropagation()}
                                                 />
                                             </div>
@@ -328,7 +336,7 @@ export default function POSForm() {
                     </div>
 
                     <div className="text-right">
-                        <p className="text-2xl font-bold">Total: ${total.toFixed(2)}</p>
+                        <p className="text-2xl font-bold">Total: Rs. {total.toFixed(2)}</p>
                     </div>
                 </CardContent>
                 <CardFooter>
