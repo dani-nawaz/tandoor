@@ -13,6 +13,7 @@ import Image from "next/legacy/image"
 import { Banknote, Clock, CreditCard, Store, Truck, Minus, Plus } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import type { Order } from "@/types/order"
+import Link from "next/link"
 
 interface Item {
   name: string
@@ -92,7 +93,6 @@ export default function POSForm() {
     const newTotal = items.reduce((sum, item) => sum + (item.selected ? item.quantity * item.price : 0), 0)
     setTotal(newTotal)
   }, [items])
-
 
   const handleItemChange = (index: number, field: "selected" | "quantity" | "price", value: boolean | number) => {
     const newItems = [...items]
@@ -238,10 +238,14 @@ export default function POSForm() {
   }
 
   return (
-    <div className="bg-gray-50 flex items-center justify-center py-12">
       <Card className="w-full max-w-2xl shadow-none drop-shadow-none border-none bg-white">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">POS Order Form</CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl font-bold">POS Order Form</CardTitle>
+            <Link href="/orders">
+              <Button variant="outline">View All Orders</Button>
+            </Link>
+          </div>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-2 gap-6">
@@ -432,7 +436,6 @@ export default function POSForm() {
           </Button>
         </CardFooter>
       </Card>
-    </div>
   )
 }
 

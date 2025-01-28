@@ -6,6 +6,7 @@ export interface OrderItem {
 }
 
 export interface Order {
+  id: number
   items: OrderItem[]
   paymentMethod: string
   orderType: string
@@ -13,4 +14,3 @@ export interface Order {
   total: number
   createdAt: string
 }
-

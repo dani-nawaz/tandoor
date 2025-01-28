@@ -20,8 +20,8 @@ export default function RootLayout({
           {`document.documentElement.removeAttribute('data-arp')`}
         </Script>
       </head>
-      <body suppressHydrationWarning={true} className="min-h-screen bg-background">
-        <main className="">
+      <body suppressHydrationWarning={true} className="min-h-screen bg-gray-100">
+        <main className="container mx-auto flex items-center justify-center py-12">
           {children}
         </main>
         <Toaster />
